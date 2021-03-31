@@ -57,32 +57,6 @@ public class IntegerDuplicateDeleterTest {
         TestUtils.assertArrayEquality(expected, actual);
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     @Test
     public void testRemoveDuplicates0() {
         Integer[] array = new Integer[]{0, 0, 0, 1, 1, 2, 3, 3, 3, 4, 4, 5, 5, 5, 5};
@@ -133,19 +107,6 @@ public class IntegerDuplicateDeleterTest {
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     @Test
     public void testRemoveDuplicatesExactlyIdempotence() {
         Integer[] input = RandomNumberFactory.createIntegers(0,50,150);
@@ -180,4 +141,20 @@ public class IntegerDuplicateDeleterTest {
         System.out.println("Input:\n\t" + Arrays.toString(input));
         TestUtils.assertArrayEquality(expected, actual);
     }
+
+    // My test I added to test my sort method
+    // Never mind...just realized all these tests give inputs that are already sorted :((((
+    /*
+    @Test
+    public void testSortArray() {
+        Integer[] input = RandomNumberFactory.createIntegers(0,50,150);
+        DuplicateDeleter<Integer> deleter = new IntegerDuplicateDeleter(input);
+        Integer[] actual = deleter.sortArray();
+        Arrays.sort(input);
+
+
+        System.out.println("Input:\n\t" + Arrays.toString(input));
+        TestUtils.assertArrayEquality(input, actual);
+    }
+     */
 }
